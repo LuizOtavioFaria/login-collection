@@ -3,60 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Coleção de Logins</title>
+    <title>Dev Portfolio | Minha Coleção</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #6366f1; /* Roxo moderno */
+            --bg-color: #0f172a; /* Azul marinho muito escuro */
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-color: #f8fafc;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #141414; /* Cor escura estilo Netflix */
-            color: white;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, #1e1b4b, var(--bg-color));
+            color: var(--text-color);
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            margin: 0;
+            padding: 40px 20px;
         }
-        h1 { margin-bottom: 30px; }
-        .container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .card {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 8px;
+
+        header {
             text-align: center;
-            width: 200px;
-            transition: transform 0.3s;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px); /* Efeito de vidro */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
             text-decoration: none;
-            color: white;
-            border: 2px solid transparent;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
         .card:hover {
-            transform: scale(1.05);
-            border-color: #e50914; /* Vermelho Netflix no hover */
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4);
         }
-        .card h2 { font-size: 1.2rem; }
+
+        .card h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Meus Projetos de Login</h1>
+    <header>
+        <h1>Code Collection</h1>
+        <p>Explorando interfaces e lógica de programação</p>
+    </header>
     
     <div class="container">
         <a href="./netflix-login/" class="card">
-            <h2>Netflix Clone</h2>
-            <p>Página de login inspirada na Netflix.</p>
+            <div>
+                <span class="badge">Interface</span>
+                <h2>Netflix Clone</h2>
+                <p>Estudo de UI/UX reproduzindo a interface de login de um dos maiores streamings do mundo.</p>
+            </div>
+            <span>Ver projeto →</span>
         </a>
 
         <a href="./login-simples/" class="card">
-            <h2>Login Simples</h2>
-            <p>Formulário de login moderno e clean.</p>
+            <div>
+                <span class="badge">Modern UI</span>
+                <h2>Login Simples</h2>
+                <p>Formulário clean com foco em usabilidade, campos validados e design responsivo.</p>
+            </div>
+            <span>Ver projeto →</span>
         </a>
 
-        </div>
+        <a href="https://seu-usuario.github.io/digital-clock/" class="card">
+            <div>
+                <span class="badge">JavaScript</span>
+                <h2>Digital Clock</h2>
+                <p>Aplicação funcional que trabalha com manipulação de tempo e atualização dinâmica do DOM.</p>
+            </div>
+            <span>Ver projeto →</span>
+        </a>
+    </div>
+
+    <footer>
+        Desenvolvido por Luiz Otávio • 2026
+    </footer>
 
 </body>
 </html>
